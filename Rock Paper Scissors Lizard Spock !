@@ -1,5 +1,5 @@
 # Name - SHIVSHANKAR JAISHEKAR
-# Project 5: Essentials of Python Programming; Developing ‘Rock, Paper and Scissors’ game using Python programming
+# Project 5 - Essentials of Python Programming; Developing ‘Rock, Paper and Scissors’ game using Python programming
 # IDE - Jupyter Notebook
 
 
@@ -19,11 +19,12 @@ cpu_scores = 0
 
 while True:
     print()
-    user_choice = input("Rock, Paper, Scissors, Lizard or Spock? ").lower()
+    user_choice = input("Rock, Paper, Scissors, Lizard or Spock? ").lower() # .lower() will consider the input even if it is typed in all lower caps
     while user_choice != "rock" and user_choice != "paper" and user_choice != "scissors" and user_choice != "lizard" and user_choice != "spock":
-        user_choice = input("Invalid input, Please try again:").lower()
+        user_choice = input("Invalid input, Please try again:").lower() # if anything other than the given inputs is entered, a invalid input error will pop up and ask for the proper input instead of breaking the code in between 
 
 # assigning rock, paper, scissors, lizard and spock numbers 0, 1, 2, 3 & 4 respectively and using random.randint to select these numbers randomly
+# this part of the code will allow the computer to select one of the 5 objects in a random order
         
     random_num = random.randint(0,4) # assigning rock, paper, scissors, lizard and spock numbers 0, 1, 2, 3 & 4 respectively and using random.randint to select these numbers randomly 
     if random_num == 0:
@@ -44,12 +45,12 @@ while True:
 
 # using the if-else statements to assign the outcomes when a particular input is selected
     
-    if user_choice == "rock":
+    if user_choice == "rock":  # outcomes if the user selects 'rock'
         if cpu_choice == "rock":
             print("It's a tie!")
         elif cpu_choice == "paper":
             print("Paper covers Rock, You lost!")
-            cpu_scores += 1
+            cpu_scores += 1  # this part of code in each elif statement will add scores depending on the who wins; user or cpu
         elif cpu_choice == "scissors":
             print("Rock crushes Scissors. You won!")
             user_scores += 1
@@ -59,7 +60,7 @@ while True:
         elif cpu_choice == "spock":
             print("Spock vaporizes Rock. You lost!")
             cpu_scores += 1
-    elif user_choice == "paper":
+    elif user_choice == "paper":  # outcomes if the user selects 'paper'
         if cpu_choice == "paper":
             print("It's a tie!")
         elif cpu_choice == "scissor":
@@ -74,7 +75,7 @@ while True:
         elif cpu_choice == "lizard":
             print("Lizard eats Paper. You lost!")
             cpu_scores += 1
-    elif user_choice == "scissors":
+    elif user_choice == "scissors":  # outcomes if the user selects 'scissors'
         if cpu_choice == "scissors":
             print("It's a tie!")
         elif cpu_choice == "rock":
@@ -89,7 +90,7 @@ while True:
         elif cpu_choice == "spock":
             print("Spock smashes Scissors. You lost!")
             cpu_scores += 1
-    elif user_choice == "lizard":
+    elif user_choice == "lizard":  # outcomes if the user selects 'lizard'
         if cpu_choice == "lizard":
             print("It's a tie!")
         elif cpu_choice == "rock":
@@ -104,7 +105,7 @@ while True:
         elif cpu_choice == "scissors":
             print("Scissors decapitates Lizard. You lost!")
             cpu_scores += 1
-    elif user_choice == "spock":
+    elif user_choice == "spock":  # outcomes if the user selects 'spock'
         if cpu_choice == "spock":
             print("It's a tie!")
         elif cpu_choice == "paper":
@@ -125,11 +126,11 @@ while True:
     print()
 
 
-    repeat = input("Play again? (Y/N) ").lower()
+    repeat = input("Play again? (Y/N) ").lower() # this part of code will ask the user if they want to continue to play the game or end the game
     while repeat != "y" and repeat != "n":
-        repeat = input("Invalid input, please try again: ").lower()
+        repeat = input("Invalid input, please try again: ").lower() # incase the user enters an invalid input other than Y or N
 
-    if repeat == "n":
+    if repeat == "n":  # the loop will break if the user enters 'N' and the game will end
         break
 
-print("\n--------------------------------------------\n")
+print("\n--------------------------------------------------------------------------------------------------\n")
