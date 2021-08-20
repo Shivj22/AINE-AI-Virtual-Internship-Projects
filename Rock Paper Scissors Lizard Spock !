@@ -1,0 +1,134 @@
+# Name - SHIVSHANKAR JAISHEKAR
+# Project 5: Essentials of Python Programming; Developing ‘Rock, Paper and Scissors’ game using Python programming
+
+
+# Importing Libraries
+
+import random
+
+
+# Using input function to take input form the user
+
+input("Welcome to Rock, Paper, Scissors, Lizard, Spock! Press Enter to Start. ")
+
+user_scores = 0
+cpu_scores = 0
+
+# Using the while statement to run the block of code until the given conditions are satisfied
+
+while True:
+    print()
+    user_choice = input("Rock, Paper, Scissors, Lizard or Spock? ").lower()
+    while user_choice != "rock" and user_choice != "paper" and user_choice != "scissors" and user_choice != "lizard" and user_choice != "spock":
+        user_choice = input("Invalid input, Please try again:").lower()
+
+# assigning rock, paper, scissors, lizard and spock numbers 0, 1, 2, 3 & 4 respectively and using random.randint to select these numbers randomly
+        
+    random_num = random.randint(0,4) # assigning rock, paper, scissors, lizard and spock numbers 0, 1, 2, 3 & 4 respectively and using random.randint to select these numbers randomly 
+    if random_num == 0:
+        cpu_choice = "rock"
+    elif random_num == 1:
+        cpu_choice = "paper"
+    elif random_num == 2:
+        cpu_choice = "scissors"
+    elif random_num == 3:
+        cpu_choice = "lizard"
+    elif random_num == 4:
+        cpu_choice = "spock"
+
+    print()
+    print("Your choice:",user_choice)
+    print("Computer's choice:",cpu_choice)
+    print()
+
+# using the if-else statements to assign the outcomes when a particular input is selected
+    
+    if user_choice == "rock":
+        if cpu_choice == "rock":
+            print("It's a tie!")
+        elif cpu_choice == "paper":
+            print("Paper covers Rock, You lost!")
+            cpu_scores += 1
+        elif cpu_choice == "scissors":
+            print("Rock crushes Scissors. You won!")
+            user_scores += 1
+        elif cpu_choice == "lizard":
+            print("Rock crushes Lizard. You won!")
+            user_scores += 1
+        elif cpu_choice == "spock":
+            print("Spock vaporizes Rock. You lost!")
+            cpu_scores += 1
+    elif user_choice == "paper":
+        if cpu_choice == "paper":
+            print("It's a tie!")
+        elif cpu_choice == "scissor":
+            print("Scissors cuts Paper. You lost!")
+            cpu_scores += 1
+        elif cpu_choice == "rock":
+            print("Paper covers Rock. You won!")
+            user_scores += 1
+        elif cpu_choice == "spock":
+            print("Paper disproves Spock. You won!")
+            user_scores += 1
+        elif cpu_choice == "lizard":
+            print("Lizard eats Paper. You lost!")
+            cpu_scores += 1
+    elif user_choice == "scissors":
+        if cpu_choice == "scissors":
+            print("It's a tie!")
+        elif cpu_choice == "rock":
+            print("Rock crushes Scissors. You lost!")
+            cpu_scores += 1
+        elif cpu_choice == "paper":
+            print("Scissors cuts Paper. You won!")
+            user_scores += 1
+        elif cpu_choice == "lizard":
+            print("Scissors decapitates Lizard. You won!")
+            user_scores += 1
+        elif cpu_choice == "spock":
+            print("Spock smashes Scissors. You lost!")
+            cpu_scores += 1
+    elif user_choice == "lizard":
+        if cpu_choice == "lizard":
+            print("It's a tie!")
+        elif cpu_choice == "rock":
+            print("Rock crushes Lizard. You lost!")
+            cpu_scores += 1
+        elif cpu_choice == "spock":
+            print("Lizard poisons Spock. You won!")
+            user_scores += 1
+        elif cpu_choice == "paper":
+            print("Lizard eats Paper. You won!")
+            user_scores += 1
+        elif cpu_choice == "scissors":
+            print("Scissors decapitates Lizard. You lost!")
+            cpu_scores += 1
+    elif user_choice == "spock":
+        if cpu_choice == "spock":
+            print("It's a tie!")
+        elif cpu_choice == "paper":
+            print("Paper disproves Spock. You lost!")
+            cpu_scores += 1
+        elif cpu_choice == "rock":
+            print("Spock vaporizes Rock. You won!")
+            user_scores += 1
+        elif cpu_choice == "scissors":
+            print("Spock smashes Scissors. You won!")
+            user_scores += 1
+        elif cpu_choice == "lizard":
+            print("Lizard poisons Spock. You lost!")
+            cpu_scores += 1
+
+    print("You have",user_scores,"wins")
+    print("The computer has",cpu_scores,"wins")
+    print()
+
+
+    repeat = input("Play again? (Y/N) ").lower()
+    while repeat != "y" and repeat != "n":
+        repeat = input("Invalid input, please try again: ").lower()
+
+    if repeat == "n":
+        break
+
+print("\n--------------------------------------------\n")
